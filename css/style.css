@@ -1,0 +1,51 @@
+html { scroll-behavior: smooth; cursor: none; }
+body { margin: 0; padding: 0; background-color: #030305; color: #e2e8f0; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+
+/* Custom Neon Cursor - Hidden on Touch Devices */
+@media (pointer: fine) {
+    .cursor-dot {
+        position: fixed; top: 0; left: 0; width: 6px; height: 6px; background: white;
+        border-radius: 50%; transform: translate(-50%, -50%); pointer-events: none; z-index: 9999;
+    }
+    .cursor-ring {
+        position: fixed; top: 0; left: 0; width: 30px; height: 30px;
+        border: 2px solid rgba(96, 165, 250, 0.8); border-radius: 50%;
+        transform: translate(-50%, -50%); pointer-events: none; z-index: 9998;
+        transition: width 0.2s, height 0.2s, background-color 0.2s;
+    }
+    .cursor-ring.hovering { width: 50px; height: 50px; background-color: rgba(96, 165, 250, 0.1); border-color: #a855f7; }
+}
+@media (pointer: coarse) {
+    html { cursor: auto; }
+    .cursor-dot, .cursor-ring { display: none !important; }
+}
+
+/* Glassmorphism Utilities */
+.glass-nav { background: rgba(3, 3, 5, 0.8); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+.glass-card { 
+    background: linear-gradient(145deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
+    backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.05); 
+    transition: box-shadow 0.4s ease, border-color 0.4s ease, transform 0.4s ease; 
+    transform-style: preserve-3d;
+}
+
+/* Vibrant Gradient Text */
+.text-gradient { background: linear-gradient(135deg, #60a5fa, #a855f7, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+/* Scroll Reveal Animation Classes */
+.reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+.reveal.active { opacity: 1; transform: translateY(0); }
+
+/* Project Card Hover Glow */
+.project-card:hover { border-color: rgba(168, 85, 247, 0.5); box-shadow: 0 0 30px rgba(168, 85, 247, 0.15); transform: translateY(-5px); }
+
+/* Skill Node Hover Colors */
+.skill-node { transition: all 0.3s ease; }
+.skill-node:hover { background: rgba(96, 165, 250, 0.15); border-color: #60a5fa; box-shadow: 0 0 15px rgba(96, 165, 250, 0.4); transform: scale(1.05); }
+.skill-node.purple:hover { background: rgba(168, 85, 247, 0.15); border-color: #a855f7; box-shadow: 0 0 15px rgba(168, 85, 247, 0.4); }
+.skill-node.pink:hover { background: rgba(236, 72, 153, 0.15); border-color: #ec4899; box-shadow: 0 0 15px rgba(236, 72, 153, 0.4); }
+.skill-node.green:hover { background: rgba(74, 222, 128, 0.15); border-color: #4ade80; box-shadow: 0 0 15px rgba(74, 222, 128, 0.4); }
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #030305; }
+::-webkit-scrollbar-thumb { background: #334155; border-radius: 10px; }
