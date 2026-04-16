@@ -202,10 +202,10 @@ let particleMouse = { x: -1000, y: -1000 };
 let globalSyncHue = 0;
 
 const sequence = [
-    { state: "GLOBE", duration: 120 },      
+    { state: "GLOBE", duration: 180 },      
     { state: "DISPERSE", duration: 120 },   
     { state: "CONSTRUCT", duration: 300 },  
-    { state: "DISPERSE", duration: 120 }    
+    { state: "DISPERSE", duration: 5 }    
 ];
 
 let currentStageIndex = 0;
